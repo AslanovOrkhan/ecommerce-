@@ -1,32 +1,60 @@
-html,
-body {
-  position: relative;
-}
-html .container,
-body .container {
+.slider {
   width: 100%;
-  height: 100vh;
+  height: 40vh;
 }
-html .swiper,
-body .swiper {
+.slider .swiper {
   width: 100%;
   height: 100%;
 }
-html .swiper .swiper-slide,
-body .swiper .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid red;
+.slider .swiper .swiper-slide {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 50px;
+  height: 160px;
+  position: relative;
 }
-html .swiper .swiper-slide .swiper-slide img,
-body .swiper .swiper-slide .swiper-slide img {
-  display: block;
+.slider .swiper .swiper-slide .icons {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-10%, -50%);
+  color: #fff;
+  font-size: 2rem;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s linear;
+}
+.slider .swiper .swiper-slide:hover .icons {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  visibility: visible;
+}
+.slider .swiper .swiper-slide:hover::before {
+  background: #000;
+  opacity: 0.3;
+}
+.slider .swiper .swiper-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s linear;
+}
+.slider .swiper .swiper-slide img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  z-index: -1;
+}
+.slider .swiper .swiper-button-next::after,
+.slider .swiper .swiper-button-prev::after {
+  font-size: 14px;
 }/*# sourceMappingURL=main.css.map */
